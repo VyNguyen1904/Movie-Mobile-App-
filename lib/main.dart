@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:lab_5/screens/post_list_screen.dart';
-import 'package:lab_5/screens/tv_explorer_screen.dart';
-import 'package:lab_5/screens/watchlist_screen.dart';
+import 'screens/splash_screen.dart';
 import 'screens/genre_screen.dart';
 import 'screens/signup_screen.dart';
+import 'screens/post_list_screen.dart';
+import 'screens/tv_explorer_screen.dart';
+import 'screens/watchlist_screen.dart';
+import 'services/notification_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await NotificationService.init();
+
   runApp(const MovieApp());
 }
 
@@ -21,8 +26,9 @@ class MovieApp extends StatelessWidget {
         useMaterial3: true,
         colorSchemeSeed: Colors.deepPurple,
       ),
-      home: const GenreScreen(),
+      home: const SplashScreen(),
       routes: {
+        '/home': (context) => const GenreScreen(),
         '/signup': (context) => const SignupScreen(),
         '/posts': (context) => const PostListScreen(),
         '/tv-explorer': (context) => const TvExplorerScreen(),

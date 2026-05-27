@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../data/movie_data.dart';
 import '../models/movie.dart';
 import '../widgets/movie_card.dart';
+import '../services/session_service.dart';
+import 'login_screen.dart';
 
 class GenreScreen extends StatefulWidget {
   const GenreScreen({super.key});
@@ -77,6 +79,19 @@ class _GenreScreenState extends State<GenreScreen> {
       appBar: AppBar(
         title: const Text('Movie App'),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await SessionService().clearSession();
+
+              if (context.mounted) {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => const LoginScreen()),
+                );
+              }
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.bookmark),
             onPressed: () {
