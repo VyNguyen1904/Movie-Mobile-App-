@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lab_5/screens/post_list_screen.dart';
 import 'package:lab_5/screens/tv_explorer_screen.dart';
+import 'package:lab_5/screens/watchlist_screen.dart';
 import 'screens/genre_screen.dart';
 import 'screens/signup_screen.dart';
 
@@ -24,7 +25,8 @@ class MovieApp extends StatelessWidget {
       routes: {
         '/signup': (context) => const SignupScreen(),
         '/posts': (context) => const PostListScreen(),
-        'tv-explorer': (context) => const TvExplorerScreen(),
+        '/tv-explorer': (context) => const TvExplorerScreen(),
+        '/watchlist': (context) => const WatchlistScreen(),
       },
     );
   }
