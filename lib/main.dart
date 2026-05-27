@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/genre_screen.dart';
+import 'screens/signup_screen.dart';
 
 void main() {
   runApp(const MovieApp());
@@ -18,6 +19,9 @@ class MovieApp extends StatelessWidget {
         colorSchemeSeed: Colors.deepPurple,
       ),
       home: const GenreScreen(),
+      routes: {
+        '/signup': (context) => const SignupScreen(),
+      },
     );
   }
 }

@@ -74,6 +74,17 @@ class _GenreScreenState extends State<GenreScreen> {
     final visibleMovies = getVisibleMovies();
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Movie App'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person_add),
+            onPressed: () {
+              Navigator.pushNamed(context, '/signup');
+            },
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16),
