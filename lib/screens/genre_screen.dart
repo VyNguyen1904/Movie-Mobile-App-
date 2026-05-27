@@ -78,6 +78,12 @@ class _GenreScreenState extends State<GenreScreen> {
         title: const Text('Movie App'),
         actions: [
           IconButton(
+            icon: const Icon(Icons.live_tv),
+            onPressed: () {
+              Navigator.pushNamed(context, '/tv-explorer');
+            },
+          ),
+          IconButton(
             icon: const Icon(Icons.cloud_download),
             onPressed: () {
               Navigator.pushNamed(context, '/posts');
